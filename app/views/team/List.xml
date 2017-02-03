@@ -1,0 +1,15 @@
+<Page 
+    xmlns="http://schemas.nativescript.org/tns.xsd" 
+    xmlns:statusbar="views/statusbar" loaded="listeners.onLoaded">
+    <statusbar:StatusBar />
+    <Page.actionBar>
+        <ActionBar title="{{ locale.team_list_title }}">
+            <NavigationButton visibility="collapsed" />
+        </ActionBar>
+        <ListView items="{{ teamList }}" itemTap="listeners.onTapListItem">
+            <ListView.itemTemplate>
+                <Label class="m-12 h3" text="{{ name }}" />
+            </ListView.itemTemplate>
+        </ListView>
+    </Page.actionBar>
+</Page>

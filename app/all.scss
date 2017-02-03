@@ -1,0 +1,49 @@
+$primary-color: #62AAF8;
+$primary-reverse-color: #FFFFFF;
+
+$primary-dark-color: #4476AD;
+$primary-dark-reverse-color: #4476AD;
+
+$default-color: #FFFFFF;
+$default-reverse-color: #000000;
+
+$alt-color: #F5F5F5;
+$alt-reverse-color: #000000;
+
+$link-color: #2389D7;
+$link-reverse-color: #FFFFFF;
+
+$selection-color: #E6EFF8;
+$selection-reverse-color: #9F9F9F;
+
+$border-width: 1;
+$border-radius: 4;
+$border-color: #CCCCCC;
+
+$space-list: 0 4 8 12 16 24 32 40 48;
+$default-space: 12;
+
+$text-field-height: 48;
+$text-field-padding: 8;
+
+$text-view-min-height: 60;
+$text-view-padding: 8;
+
+$font-family-icon: iconic;
+
+$font-family-light: HelveticaNeue-Light;
+$font-family-normal: HelveticaNeue-Regular;
+$font-family-bold: HelveticaNeue-Medium;
+
+$font-family-list: light $font-family-light, normal $font-family-normal, bold $font-family-bold;
+$default-font-family: $font-family-light;
+
+$font-size-list: 32 24 18 16 14 12 8;
+$default-font-size: 16;
+
+$icon-list: invite a, discover b, channel c, user d, users e,
+calendar f, heart g, info-circle h, search i, paperclip j, pencil k,
+ellipsis-v l, ellipsis-h m, link n, globe o, lock p, unlock q, 
+at r, setting s, wrench t, bars u, loop v, sign-out w, 
+times x, times y, plus-circle z, send A, newspaper B,
+file C, home D, check E, clock F, join G;

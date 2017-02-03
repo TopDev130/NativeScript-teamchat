@@ -1,0 +1,20 @@
+<GridLayout 
+    xmlns:main="views/main" columns="*" rows="*, auto">
+    <ScrollView id="scvContent" row="0" col="0">
+        <StackLayout class="pt-0 pl-12 pb-12 pr-12">
+            <Repeater items="{{ postList }}">
+                <Repeater.itemTemplate>
+                    <DockLayout class="mt-12 post">
+                        <Image class="dock-left v-align-top profile-img" src="{{ onProfileImage(id, user_id) }}" />
+                        <Label class="ml-8" text="{{ message }}" />
+                    </DockLayout>
+                </Repeater.itemTemplate>
+            </Repeater>
+        </StackLayout>
+    </ScrollView>
+    <DockLayout id="lytMsg" row="1" col="0" class="pt-16 pb-16">
+        <Label class="dock-left p-16 ic ic-paperclip h3 txt-center primary-fg-color v-align-center" />
+        <Label class="dock-right p-16 ic ic-send h3 txt-center primary-fg-color v-align-center" />
+        <TextView id="txvMsg" class="mt-4 mb-4" text="{{ selectedChannel.message }}" hint="{{ locale.main_hint_msg }}" />
+    </DockLayout>
+</GridLayout>

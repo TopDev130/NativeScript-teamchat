@@ -1,0 +1,2 @@
+<statusbar:StatusBar 
+    xmlns:statusbar="nativescript-statusbar" ios:barStyle="light" android:barStyle="{{ appConfig.STYLE.PRIMARY_DARK_COLOR }}" />

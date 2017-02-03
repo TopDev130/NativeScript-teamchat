@@ -1,0 +1,23 @@
+<Page 
+    xmlns="http://schemas.nativescript.org/tns.xsd" 
+    xmlns:statusbar="views/statusbar" loaded="listeners.onLoaded">
+    <statusbar:StatusBar />
+    <Page.actionBar>
+        <ActionBar title="{{ locale.login_title }}" />
+    </Page.actionBar>
+    <DockLayout>
+        <ContentView class="dock-bottom alt-bg-color">
+            <Label class="m-8 txt-right alt-reverse-fg-color" text="{{ locale.login_lbl_copyright }}" />
+        </ContentView>
+        <ScrollView>
+            <StackLayout class="p-12 vgroup">
+                <Label class="mt-0 h5" text="{{ locale.login_lbl_header }}" />
+                <TextField id="txtUsername" hint="{{ locale.login_hint_username }}" keyboardType="email" autocapitalizationType="none" />
+                <TextField id="txtPwd" class="secured" hint="{{ locale.login_hint_pwd }}" />
+                <Button text="{{ locale.login_btn_submit }}" tap="listeners.onTapLogin" />
+                <Label class="mt-24 link" text="{{ locale.login_btn_forgot_pwd }}" />
+                <Label class="link" text="{{ locale.login_btn_invite }}" />
+            </StackLayout>
+        </ScrollView>
+    </DockLayout>
+</Page>

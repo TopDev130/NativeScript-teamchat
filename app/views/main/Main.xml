@@ -1,0 +1,28 @@
+<Page 
+  xmlns="http://schemas.nativescript.org/tns.xsd" 
+  xmlns:drawer="nativescript-telerik-ui/sidedrawer" 
+  xmlns:statusbar="views/statusbar" 
+  xmlns:main="views/main" loaded="listeners.onLoaded" navigatedTo="listeners.onNavigatedTo">
+  <statusbar:StatusBar />
+  <Page.actionBar>
+    <ActionBar title="{{ selectedChannel.display_name }}">
+      <NavigationButton ios:visibility="collapsed" icon="res://menu" tap="listeners.onTapHamburger" />
+      <ActionBar.actionItems>
+        <ios>
+          <ActionItem ios.position="left" icon="res://menu" tap="listeners.onTapHamburger" />
+        </ios>
+        <ActionItem ios.position="right" icon="res://info" tap="listeners.onTapInfo" />
+        <ActionItem ios.position="right" icon="res://search" tap="listeners.onTapSearch" />
+        <ActionItem ios.position="right" icon="res://more_vert" tap="listeners.onTapOptionMenu" />
+      </ActionBar.actionItems>
+    </ActionBar>
+  </Page.actionBar>
+  <drawer:RadSideDrawer id="drawer">
+    <drawer:RadSideDrawer.drawerContent>
+      <main:Menu />
+    </drawer:RadSideDrawer.drawerContent>
+    <drawer:RadSideDrawer.mainContent>
+      <main:Content />
+    </drawer:RadSideDrawer.mainContent>
+  </drawer:RadSideDrawer>
+</Page>

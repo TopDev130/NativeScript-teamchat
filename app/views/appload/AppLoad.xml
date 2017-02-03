@@ -1,0 +1,6 @@
+<Page 
+    xmlns="http://schemas.nativescript.org/tns.xsd" 
+    xmlns:statusbar="views/statusbar" actionBarHidden="true" loaded="listeners.onLoaded">
+    <statusbar:StatusBar />
+    <ActivityIndicator ios.activityIndicatorViewStyle="0" busy="true" />
+</Page>

@@ -1,0 +1,225 @@
+﻿@import 'all.scss';
+
+Page {
+  ActionBar {
+    font-family: $default-font-family;
+    font-size: $default-font-size;
+    color: $primary-reverse-color;
+    background-color: $primary-color;
+  }
+
+  ActivityIndicator {
+    width: 56;
+    height: 56;
+    color: $primary-dark-color;
+  }
+
+  Label {
+    font-family: $default-font-family;
+    font-size: $default-font-size;
+    white-space: normal;
+    color: $default-reverse-color;
+  }
+
+  TextField {
+    height: $text-field-height;
+    padding-left: $text-field-padding;
+    padding-right: $text-field-padding; 
+    font-family: $default-font-family;
+    font-size: $default-font-size;
+    color: $default-reverse-color;
+    border-width: $border-width;
+    border-color: $border-color;
+    border-radius: $border-radius;
+    autocorrect: false;
+  }
+
+  TextView {
+    height: $text-view-min-height;
+    padding: $text-view-padding;
+    font-family: $default-font-family;
+    font-size: $default-font-size;
+    color: $default-reverse-color;
+    border-width: $border-width;
+    border-color: $border-color;
+    border-radius: $border-radius;
+  }
+
+  Button {
+    height: 48;
+    font-family: $font-family-bold;
+    font-size: $default-font-size;
+    white-space: nowrap;
+    color: $primary-reverse-color;
+    border-radius: $border-radius;
+    background-color: $primary-color;
+  }
+}
+
+.w-100 {
+  width: 100%;
+}
+
+.h-100 {
+  height:100%;
+}
+
+.vgroup {
+  orientation: vertical;
+  & > * {
+    margin-top: $default-space;
+  }
+}
+
+.hgroup {
+  orientation: horizontal;
+}
+
+$vertial-align-list: top, bottom, center, stretch;
+@each $value in $vertial-align-list {
+  .v-align-#{$value} {
+    vertical-align: $value;
+  }
+}
+
+$horizonal-align-list: left, right, center, stretch;
+@each $value in $horizonal-align-list {
+  .h-align-#{$value} {
+    horizontal-align: $value;
+  }
+}
+
+@each $value in $space-list {
+  .m-#{$value} {
+    margin: $value;
+  }
+  .mt-#{$value} {
+    margin-top: $value;
+  }
+  .ml-#{$value} {
+    margin-left: $value;
+  }
+  .mb-#{$value} {
+    margin-bottom: $value;
+  }
+  .mr-#{$value} {
+    margin-right: $value;
+  }
+  .p-#{$value} {
+    padding: $value;
+  }
+  .pt-#{$value} {
+    padding-top: $value;
+  }
+  .pl-#{$value} {
+    padding-left: $value;
+  }
+  .pb-#{$value} {
+    padding-bottom: $value;
+  }
+  .pr-#{$value} {
+    padding-right: $value;
+  }
+}
+
+.ic {
+  font-family: $font-family-icon;
+}
+
+@each $icon in $icon-list {
+  $class: nth($icon, 1);
+  $text: nth($icon, 2);
+  .ic-#{$class} {
+    text: $text;
+  }
+}
+
+@each $font in $font-family-list {
+  $class: nth($font, 1);
+  $font-family: nth($font, 2);
+  .#{$class} {
+    font-family: $font-family;
+  }
+}
+
+@each $size in $font-size-list {
+  $class: index($font-size-list, $size) + 1;
+  .h#{$class} {
+    font-size: $size;
+  }
+}
+
+$text-align-list: left, center, right;
+@each $value in $text-align-list {
+  .txt-#{$value} {
+    text-align: $value;
+  }
+}
+
+$dock-list: top, left, bottom, right;
+@each $value in $dock-list {
+  .dock-#{$value} {
+    dock: $value;
+  }
+}
+
+.secured {
+  secure: true;
+}
+
+.wrap {
+  height: auto;
+  white-space: normal;
+}
+
+.no-wrap {
+  white-space: nowrap;
+}
+
+$text-transform-list: none capitalize uppercase lowercase;
+@each $value in $text-transform-list {
+  .txt-#{$value} {
+    text-transform: $value;
+  }
+}
+
+.link {
+  color: $link-color;
+  border-width: 0.1;
+  border-color: transparent;
+  background-color: transparent;
+}
+
+.transparent-bg-color {
+  background-color: transparent;
+}
+
+$color-list: primary $primary-color, primary-reverse $primary-reverse-color,
+primary-dark $primary-dark-color, primary-dark-reverse $primary-dark-reverse-color,
+default $default-color, default-reverse $default-reverse-color,
+alt $alt-color, alt-reverse $alt-reverse-color,
+link $link-color, link-reverse $link-reverse-color,
+selection $selection-color, selection-reverse $selection-reverse-color;
+@each $color in $color-list {
+  $name: nth($color, 1);
+  $value: nth($color, 2);
+  .#{$name}-fg-color {
+    color: $value;
+  }
+  .#{$name}-bg-color {
+    background-color: $value;
+  }
+}
+
+.post {
+    .profile-img {
+        width: 44;
+        height: 44;
+        border-width: 0.1;
+        border-color: transparent;
+        border-radius: 22;
+        background-color: $primary-dark-color;
+        stretch: aspectFit;
+        loadMode: async;
+    }
+}

@@ -1,0 +1,43 @@
+<ScrollView id="svMenu" class="alt-bg-color">
+    <StackLayout>
+        <ContentView id="cvHeader" class="primary-bg-color">
+            <Label class="m-8 no-wrap primary-reverse-fg-color" text="{{ '@' + user.username }}" />
+        </ContentView>
+        <DockLayout class="m-4">
+            <Button class="dock-right p-8 ic ic-plus-circle h3 primary-fg-color transparent-bg-color" />
+            <Label class="ml-12 txt-uppercase primary-dark-fg-color v-align-center" text="{{ locale.menu_public_channel }}" />
+        </DockLayout>
+        <Repeater items="{{ publicChannelList }}">
+            <Repeater.itemTemplate>
+                <DockLayout class="{{ 'p-8' + (selected ? ' selection-bg-color' : '')}}" tap="listeners.onTapMenuItem">
+                    <Label class="{{ 'ml-16 dock-left ic ic-globe v-align-center' + (selected ? ' primary-fg-color' : ' selection-reverse-fg-color') }}" />
+                    <Label class="{{ 'ml-4 no-wrap selection-reverse-fg-color' + (selected ? ' bold' : '') }}" text="{{ display_name }}" />
+                </DockLayout>
+            </Repeater.itemTemplate>
+        </Repeater>
+        <DockLayout class="m-4">
+            <Button class="dock-right p-8 ic ic-plus-circle h3 primary-fg-color transparent-bg-color" />
+            <Label class="ml-12 txt-uppercase primary-dark-fg-color v-align-center" text="{{ locale.menu_private_channel }}" />
+        </DockLayout>
+        <Repeater items="{{ privateChannelList }}">
+            <Repeater.itemTemplate>
+                <DockLayout class="{{ 'p-8' + (selected ? ' selection-bg-color' : '')}}" tap="listeners.onTapMenuItem">
+                    <Label class="{{ 'ml-16 dock-left ic ic-lock v-align-center' + (selected ? ' primary-fg-color' : ' selection-reverse-fg-color') }}" />
+                    <Label class="{{ 'ml-4 no-wrap selection-reverse-fg-color' + (selected ? ' bold' : '') }}" text="{{ display_name }}" />
+                </DockLayout>
+            </Repeater.itemTemplate>
+        </Repeater>
+        <DockLayout class="m-4">
+            <Button class="dock-right p-8 ic ic-plus-circle h3 primary-fg-color transparent-bg-color" />
+            <Label class="ml-12 txt-uppercase primary-dark-fg-color v-align-center" text="{{ locale.menu_direct_channel }}" />
+        </DockLayout>
+        <Repeater items="{{ directChannelList }}">
+            <Repeater.itemTemplate>
+                <DockLayout class="{{ 'p-8' + (selected ? ' selection-bg-color' : '')}}" tap="listeners.onTapMenuItem">
+                    <Label class="ml-16 dock-left ic ic-user selection-reverse-fg-color v-align-center" />
+                    <Label class="{{ 'ml-4 no-wrap selection-reverse-fg-color' + (selected ? ' bold' : '') }}" text="{{ display_name }}" />
+                </DockLayout>
+            </Repeater.itemTemplate>
+        </Repeater>
+    </StackLayout>
+</ScrollView>
